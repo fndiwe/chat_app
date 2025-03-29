@@ -11,7 +11,7 @@ class ChatService {
   Future<List<AppUser>> getUsers() async {
     try {
       QuerySnapshot<Map<String, dynamic>> users =
-          await _firestore.collection("users").get();
+          await _firestore.collection("users").where("id", isNotEqualTo: _auth.currentUser!.uid).get();
       return users.docs.map((doc) => AppUser.fromMap(doc.data())).toList();
     } on FirebaseException {
       rethrow;

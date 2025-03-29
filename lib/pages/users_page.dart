@@ -76,49 +76,46 @@ class UserListView extends StatelessWidget {
         child: Text("No users to show"),
       );
     }
-    return ListView.separated(
+    return ListView.builder(
       padding: EdgeInsets.symmetric(horizontal: 8),
       itemCount: users.length,
-      separatorBuilder: (context, index) {
-        return index < users.length - 2 ? Divider() : Container();
-      },
       itemBuilder: (context, index) {
         final AppUser user = users[index];
-        final email = user.email;
         final username = "${user.firstName} ${user.lastName}";
         final bio = user.bio;
-        return email != auth.currentUser!.email
-            ? ListTile(
-                title: Text(username),
-                subtitle: bio != null
-                    ? Text(
-                        bio,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      )
-                    : null,
-                trailing: StreamBuilder(
-                    stream: _followService.isFollowing(user.id),
-                    builder: (context, snapshot) {
-                      return OutlinedButton.icon(
-                        onPressed: () =>
-                            snapshot.hasData && snapshot.data!.exists
-                                ? _followService.unfollowUser(user.id)
-                                : _followService.followUser(user.id),
-                        label: Text(snapshot.hasData && snapshot.data!.exists
-                            ? "Unfollow"
-                            : "Follow"),
-                        icon: const Icon(Icons.rss_feed_rounded),
-                      );
-                    }),
-                leading: CircularImage(
-                  url: user.profilePhotoUrl,
-                  size: 23,
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: ListTile(
+                  title: Text(username),
+                  subtitle: bio != null
+                      ? Text(
+                          bio,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        )
+                      : null,
+                  trailing: StreamBuilder(
+                      stream: _followService.isFollowing(user.id),
+                      builder: (context, snapshot) {
+                        return OutlinedButton.icon(
+                          onPressed: () =>
+                              snapshot.hasData && snapshot.data!.exists
+                                  ? _followService.unfollowUser(user.id)
+                                  : _followService.followUser(user.id),
+                          label: Text(snapshot.hasData && snapshot.data!.exists
+                              ? "Unfollow"
+                              : "Follow"),
+                          icon: const Icon(Icons.rss_feed_rounded),
+                        );
+                      }),
+                  leading: CircularImage(
+                    url: user.profilePhotoUrl,
+                    size: 23,
+                  ),
+                  onTap: () => navigatorkey.currentState
+                      ?.push(MaterialPageRoute(builder:(context) => ProfilePage(userArg: user,),)),
                 ),
-                onTap: () => navigatorkey.currentState
-                    ?.push(MaterialPageRoute(builder:(context) => ProfilePage(userArg: user,),)),
-              )
-            : Container();
+        );
       },
     );
   }

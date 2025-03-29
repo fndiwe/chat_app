@@ -59,6 +59,7 @@ class _ProfilePageState extends State<ProfilePage> {
               onPressed: () async {
                 final authService = AuthService();
                 await authService.signOut();
+                if (context.mounted) context.read<ProfileProvider>().clearUser();
                 if (context.mounted) Navigator.pop(context);
               },
               style: ButtonStyle(

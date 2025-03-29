@@ -12,13 +12,17 @@ class ProfileProvider extends ChangeNotifier {
       FirebaseAuth auth, AuthService authService) async {
       error = null;
       try {
-        currentUser = await authService.getUser(auth.currentUser!.uid);
+        currentUser = await authService.getUser(auth.currentUser?.uid);
       } on FirebaseException catch (e) {
         error = e.message;
       } finally {
         loading = false;
       }
+      notifyListeners();
+    }
 
+    void clearUser() {
+      currentUser = null;
       notifyListeners();
     }
 }

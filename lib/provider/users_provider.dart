@@ -10,7 +10,6 @@ class UsersProvider extends ChangeNotifier {
   bool loading = true;
 
   Future<void> getUsers(ChatService chatService) async {
-    if (users.isEmpty) {
       error = null;
       try {
         users = await chatService.getUsers();
@@ -21,5 +20,4 @@ class UsersProvider extends ChangeNotifier {
       }
       notifyListeners();
     }
-  }
 }

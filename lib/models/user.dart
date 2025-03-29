@@ -19,6 +19,7 @@ class AppUser {
       required this.timestamp});
 
   Map<String, dynamic> toMap() => {
+        "id": id,
         "email": email,
         "first_name": firstName,
         "last_name": lastName,
@@ -26,7 +27,7 @@ class AppUser {
         "profile_photo_url": profilePhotoUrl,
         "timestamp": timestamp
       };
-      
+
   String get fullName => "$firstName $lastName";
 
   factory AppUser.fromMap(Map<String?, dynamic> map) {

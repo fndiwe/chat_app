@@ -1,16 +1,41 @@
 # chat_app
 
-A new Flutter project.
+A Social Application.
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+A simple social application built to try out Flutter and also level up my experience in Mobile App Development.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. View posts from following and share contents to followers.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Get chats and messages in realtime, also displays unread messages.
+
+3. Switch between light and dark mode.
+
+## Screenshots
+
+### Signup screen
+
+![Signup screen](screenshots/signup.png)
+
+### Home screen
+
+![Home screen](screenshots/homescreen.png)
+
+### Messages screen
+
+![Messages screen](screenshots/messages.png)
+
+### Comments section
+
+![Comments section](screenshots/comments.png)
+
+### Profile screen
+
+![Profile screen](screenshots/profile.png)
+
+### Chat screen
+
+![Chat screen](screenshots/chat.png)
