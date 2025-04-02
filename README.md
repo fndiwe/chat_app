@@ -10,7 +10,7 @@ A simple social application built to try out Flutter and also level up my experi
 
 1. View posts from following and share contents to followers.
 
-2. Get chats and messages in realtime, also displays unread messages.
+2. Get chats and messages in realtime, also display unread messages.
 
 3. Switch between light and dark mode.
 
@@ -18,24 +18,24 @@ A simple social application built to try out Flutter and also level up my experi
 
 ### Signup screen
 
-![Signup screen](screenshots/signup.png)
+<img src = "screenshots/signup.png" alt = "Signup screen" height = "50%" width = "50%"/>
 
 ### Home screen
 
-![Home screen](screenshots/homescreen.png)
+<img src = "screenshots/homescreen.png" alt = "Home screen" height = "50%" width = "50%"/>
 
 ### Messages screen
 
-![Messages screen](screenshots/messages.png)
+<img src = "screenshots/messages.png" alt = "Messages screen" height = "50%" width = "50%">
 
 ### Comments section
 
-![Comments section](screenshots/comments.png)
+<img src = "screenshots/comments.png" alt = "Comments section" height = "50%" width = "50%">
 
 ### Profile screen
 
-![Profile screen](screenshots/profile.png)
+<img src = "screenshots/profile.png" alt = "Profile screen" height = "50%" width = "50%">
 
 ### Chat screen
 
-![Chat screen](screenshots/chat.png)
+<img src = "screenshots/chat.png" alt = "Chat screen" height = "50%" width = "50%">
